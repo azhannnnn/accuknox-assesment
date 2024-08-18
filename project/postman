@@ -1,0 +1,98 @@
+### Postman Collection Structure
+
+1. **Signup API**
+    - **Endpoint**: `POST /signup/`
+    - **Description**: Register a new user.
+    - **Request Body**:
+      ```json
+      {
+          "email": "user@example.com",
+          "password": "password123",
+          "name": "John Doe"
+      }
+      ```
+
+2. **Login API**
+    - **Endpoint**: `POST /login/`
+    - **Description**: Login with email and password.
+    - **Request Body**:
+      ```json
+      {
+          "email": "user@example.com",
+          "password": "password123"
+      }
+      ```
+
+3. **Search Users API**
+    - **Endpoint**: `GET /search-users/?search=<query>`
+    - **Description**: Search users by name or email.
+    - **Query Parameter**: `search`
+    - **Response Example**:
+      ```json
+      [
+          {
+              "id": 1,
+              "email": "user@example.com",
+              "name": "John Doe"
+          }
+      ]
+      ```
+
+4. **Send Friend Request API**
+    - **Endpoint**: `POST /send-friend-request/`
+    - **Description**: Send a friend request.
+    - **Request Body**:
+      ```json
+      {
+          "receiver": 2,
+          "sender": 1
+      }
+      ```
+
+5. **Respond to Friend Request API**
+    - **Endpoint**: `PATCH /respond-to-friend-request/{id}/`
+    - **Description**: Accept or reject a friend request.
+    - **Request Body**:
+      ```json
+      {
+          "status": "accepted"
+      }
+      ```
+
+6. **Pending Friend Requests API**
+    - **Endpoint**: `GET /pending-requests/`
+    - **Description**: List pending friend requests.
+    - **Response Example**:
+      ```json
+      [
+          {
+              "id": 1,
+              "sender": {
+                  "id": 2,
+                  "email": "sender@example.com",
+                  "name": "Jane Doe"
+              },
+              "receiver": {
+                  "id": 1,
+                  "email": "user@example.com",
+                  "name": "John Doe"
+              },
+              "status": "pending"
+          }
+      ]
+      ```
+
+7. **List Friends API**
+    - **Endpoint**: `GET /friends/`
+    - **Description**: List accepted friends.
+    - **Response Example**:
+      ```json
+      [
+          {
+              "id": 2,
+              "email": "friend@example.com",
+              "name": "Jane Doe"
+          }
+      ]
+      ```
+
