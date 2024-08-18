@@ -42,23 +42,15 @@ This is a Django Rest Framework-based API for a social networking application. T
     pip install -r requirements.txt
     ```
 
-4. **Set up environment variables:**
 
-   Create a `.env` file in the root directory with the following variables:
-
-    ```env
-    SECRET_KEY=your_secret_key
-    DEBUG=True
-    DATABASE_URL=your_database_url
-    ```
-
-5. **Run database migrations:**
+4. **Run database migrations:**
 
     ```bash
+    python manage.py makemigrations
     python manage.py migrate
     ```
 
-6. **Run the development server:**
+5. **Run the development server:**
 
     ```bash
     python manage.py runserver
